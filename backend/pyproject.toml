@@ -1,0 +1,102 @@
+[tool.poetry]
+name = "electec"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "app" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.23.2"
+langserve = {extras = ["all"], version = "^0.2.2"}
+pydantic = "<3"
+langchain-core = "^0.2.22"
+langchain-openai = "^0.1.17"
+langchain-community = "^0.2.9"
+
+[tool.poetry.plugins.dotenv]
+ignore = "false"
+location = ".env"
+
+
+[tool.poetry.group.dev.dependencies]
+langchain-cli = ">=0.0.15"
+pytest = "^8.2.2"
+mypy = "^1.11.0"
+ruff = "^0.5.3"
+faker = "^26.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+# Same as Black.
+line-length = 88
+indent-width = 4
+# Assume Python 3.8
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = []
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
+disallow-any-generics = true
+disallow-subclassing-any = true
+disallow-untyped-calls = true
+disallow-untyped-defs = true
+disallow-incomplete-defs = true
+check-untyped-defs =true 
+disallow-untyped-decorators = true
+warn-redundant-casts = true
+warn-unused-ignores=true
+warn-return-any=true
+no-implicit-reexport=true
+strict-equality=true
+extra-checks=true

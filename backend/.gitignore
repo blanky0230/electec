@@ -1,0 +1,4 @@
+__pycache__
+.ruff_cache
+.env
+elec_tec_ecommerce.db
