@@ -16,6 +16,7 @@ pydantic = "<3"
 langchain-core = "^0.2.22"
 langchain-openai = "^0.1.17"
 langchain-community = "^0.2.9"
+langgraph = "^0.1.9"
 
 [tool.poetry.plugins.dotenv]
 ignore = "false"
